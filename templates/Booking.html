@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tourist Booking - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/booking">Bookings</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<section class="booking-section">
+
+    <div class="booking-card">
+
+        <h1>📝 Tourist Booking</h1>
+
+        <p class="booking-subtitle">
+            Fill in your travel details to confirm your booking.
+        </p>
+
+
+        <form method="POST">
+
+            <label>Tourist Name</label>
+            <input type="text" name="name" required>
+
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+
+            <label>Destination</label>
+            <input type="text" name="destination" required>
+
+
+            <label>Hotel</label>
+            <input type="text"
+                   name="hotel"
+                   value="{{ request.args.get('hotel', '') }}"
+                   placeholder="Enter hotel name"
+                   required>
+
+
+            <label>Check-in Date</label>
+            <input type="date" name="checkin" required>
+
+
+            <label>Check-out Date</label>
+            <input type="date" name="checkout" required>
+
+
+            <label>Number of People</label>
+            <input type="number"
+                   name="people"
+                   min="1"
+                   value="1"
+                   required>
+
+
+            <button type="submit">
+                🎫 Confirm Booking
+            </button>
+
+        </form>
+
+
+        <br>
+
+        <a href="/hotels" class="back-link">
+            ← Back to Hotels
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tourism | Explore • Travel • Enjoy
+    </p>
+
+</footer>
+
+</body>
+</html>

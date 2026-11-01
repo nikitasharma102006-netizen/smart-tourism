@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ place.title }} - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- ONLY MAP: Leaflet CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- ONLY MAP: Map Size -->
+    <style>
+        #place-map {
+            height: 450px;
+            width: 100%;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">Dashboard</a>
+
+        <a href="/places">Places</a>
+
+        <a href="/hotels">Hotels</a>
+
+        <a href="/booking">Bookings</a>
+
+        <a href="/mybooking">My Bookings</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+
+<section class="place-details">
+
+    <div class="details-card">
+
+
+        <div class="details-icon">
+            {{ place.emoji }}
+        </div>
+
+
+        <h1>{{ place.title }}</h1>
+
+
+        <p class="details-about">
+            {{ place.about }}
+        </p>
+
+
+
+        <h2>📍 Popular Attractions</h2>
+        
+        <ul>
+
+            {% for item in place.places %}
+
+                <li>{{ item }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+
+
+        <div class="details-info">
+
+
+            <div>
+
+                <h3>🌤️ Best Time</h3>
+
+                <p>
+                    {{ place.best_time }}
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>💰 Estimated Budget</h3>
+
+                <p>
+                    {{ place.budget }}
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ONLY NEW MAP SECTION              -->
+        <!-- ================================= -->
+
+        <h2>🗺️ Explore {{ place.title }} on Map</h2>
+
+        <div id="place-map"></div>
+
+
+
+        <a href="/booking">
+
+            <button class="book-btn">
+                🎫 Book Your Trip
+            </button>
+
+        </a>
+
+
+        <br>
+        <br>
+
+
+        <a href="/places" class="back-link">
+            ← Back to Places
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tourism | Explore • Travel • Enjoy
+    </p>
+
+</footer>
+
+
+
+<!-- ================================= -->
+<!-- ONLY NEW MAP JAVASCRIPT            -->
+<!-- ================================= -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    var latitude = {{ place.lat }};
+    var longitude = {{ place.lng }};
+
+    var map = L.map('place-map').setView(
+        [latitude, longitude],
+        10
+    );
+
+    L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+            attribution: '&copy; OpenStreetMap contributors'
+        }
+    ).addTo(map);
+
+    // Main Destination Marker
+    L.marker([latitude, longitude])
+        .addTo(map)
+        .bindPopup(
+            "<b>{{ place.emoji }} {{ place.title }}</b><br>Tourist Destination"
+        )
+        .openPopup();
+
+
+    // Goa Tourist Attractions
+
+    {% if place.title == "Goa" %}
+
+    // Baga Beach
+    L.marker([15.5557, 73.7517])
+        .addTo(map)
+        .bindPopup("<b>🏖️ Baga Beach</b><br>Popular beach in Goa.");
+
+    // Calangute Beach
+    L.marker([15.5439, 73.7553])
+        .addTo(map)
+        .bindPopup("<b>🏖️ Calangute Beach</b><br>Famous tourist beach.");
+
+    // Fort Aguada
+    L.marker([15.4909, 73.8278])
+        .addTo(map)
+        .bindPopup("<b>🏰 Fort Aguada</b><br>Historic fort in Goa.");
+
+    // Dudhsagar Waterfalls
+    L.marker([15.3144, 74.1235])
+        .addTo(map)
+        .bindPopup("<b>💦 Dudhsagar Waterfalls</b><br>Beautiful waterfall destination.");
+
+    {% endif %}
+
+</script>
+
+</body>
+</html>

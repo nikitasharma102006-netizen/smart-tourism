@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - Smart Tourism</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f4ff, #f8fbff);
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1687d9;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main */
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            color: #1687d9;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* Booking cards */
+        .booking-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+            border-left: 6px solid #1687d9;
+        }
+
+        .booking-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .booking-top h2 {
+            margin: 0;
+            color: #1687d9;
+        }
+
+        .booking-id {
+            background: #e8f4ff;
+            color: #1687d9;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .detail-box {
+            background: #f7faff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail-box strong {
+            display: block;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .detail-box span {
+            color: #222;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 20px;
+            background: #dff7e8;
+            color: #18864b;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* No booking */
+        .no-booking {
+            background: white;
+            text-align: center;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
+
+        /* Back button */
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            background: #1687d9;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: #0d6eb5;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+
+        <h2>🌍 Smart Tourism</h2>
+
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/places">Places</a>
+            <a href="/hotels">Hotels</a>
+            <a href="/booking">Booking</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <div class="heading">
+
+            <h1>📋 My Bookings</h1>
+
+            <p>
+                View all your tourism bookings in one place.
+            </p>
+
+        </div>
+
+
+        {% if bookings %}
+
+            {% for booking in bookings %}
+
+            <div class="booking-card">
+
+                <div class="booking-top">
+
+                    <h2>🌴 {{ booking['destination'] }}</h2>
+
+                    <span class="booking-id">
+                        Booking #{{ booking['id'] }}
+                    </span>
+
+                </div>
+
+
+                <div class="details">
+
+                    <div class="detail-box">
+                        <strong>👤 Tourist Name</strong>
+                        <span>{{ booking['name'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>📧 Email</strong>
+                        <span>{{ booking['email'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>📍 Destination</strong>
+                        <span>{{ booking['destination'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>🏨 Hotel</strong>
+                        <span>{{ booking['hotel'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>📅 Check-in</strong>
+                        <span>{{ booking['checkin'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>📅 Check-out</strong>
+                        <span>{{ booking['checkout'] }}</span>
+                    </div>
+
+                    <div class="detail-box">
+                        <strong>👥 People</strong>
+                        <span>{{ booking['people'] }}</span>
+                    </div>
+
+                </div>
+
+
+                <div class="status">
+                    ✅ Booking Confirmed
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="no-booking">
+
+                <h2>📭 No Bookings Yet</h2>
+
+                <p>
+                    You haven't made any tourism bookings yet.
+                </p>
+
+                <a href="/booking" class="back-button">
+                    📝 Make a Booking
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <a href="/dashboard" class="back-button">
+            🏠 Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+</html>

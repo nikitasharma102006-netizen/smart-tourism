@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotels - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/booking">Bookings</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<section class="hotels-section">
+
+    <div class="hotels-header">
+
+        <h1>🏨 Find Your Perfect Hotel</h1>
+
+        <p>
+            Comfortable stays for your memorable journey.
+        </p>
+
+    </div>
+
+
+    <div class="hotels-grid">
+
+
+        <!-- Goa Hotel -->
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                     alt="Goa Beach Resort">
+            </div>
+
+            <div class="hotel-content">
+
+                <h2>Goa Beach Resort</h2>
+
+                <p>📍 Goa</p>
+
+                <p>⭐ 4.5 Rating</p>
+
+                <h3>₹2,500 <span>per night</span></h3>
+
+                <a href="/booking?
+                hotel=Goa%20Beach%20Resort">
+                 <button>Book Now</button>
+               </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mumbai Hotel -->
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"
+                     alt="Mumbai City Hotel">
+            </div>
+
+            <div class="hotel-content">
+
+                <h2>Mumbai City Hotel</h2>
+
+                <p>📍 Mumbai</p>
+
+                <p>⭐ 4.3 Rating</p>
+
+                <h3>₹3,000 <span>per night</span></h3>
+
+                <a href="/booking?
+                hotel=Mumbai%20City%20Hotel">
+                    <button>Book Now</button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Manali Hotel -->
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1544986581-efac024faf62"
+                     alt="Manali Mountain Hotel">
+            </div>
+
+            <div class="hotel-content">
+
+                <h2>Manali Mountain Resort</h2>
+
+                <p>📍 Manali</p>
+
+                <p>⭐ 4.6 Rating</p>
+
+                <h3>₹3,200 <span>per night</span></h3>
+
+               <a href="/booking?
+               hotel=Manali%20Mountain%20Resort">
+                <button>Book Now</button>
+               </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Kerala Hotel -->
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1"
+                     alt="Kerala Resort">
+            </div>
+
+            <div class="hotel-content">
+
+                <h2>Kerala Lake Resort</h2>
+
+                <p>📍 Kerala</p>
+
+                <p>⭐ 4.7 Rating</p>
+
+                <h3>₹3,500 <span>per night</span></h3>
+
+                <a href="/booking?
+                hotel=Kerala%20Lake%20Resort">
+                   <button>Book Now</button>
+                </a>
+
+            
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tourism | Explore • Travel • Enjoy
+    </p>
+
+</footer>
+
+</body>
+</html>

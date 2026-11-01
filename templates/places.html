@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tourist Places - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/booking">Bookings</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<!-- PLACES HEADER -->
+
+<section class="places-section">
+
+    <div class="places-header">
+
+        <h1>🗺️ Explore Tourist Places</h1>
+
+        <p>
+            Discover beautiful destinations in India.
+        </p>
+
+    </div>
+
+
+    <!-- PLACE CARDS -->
+
+    <div class="places-grid">
+
+
+        <!-- GOA -->
+
+        <div class="place-card">
+
+            <div class="place-image goa">
+                <img
+                src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2"
+                    alt="Goa Beach">
+            </div>
+
+            <div class="place-content">
+
+                <h2>Goa</h2>
+
+                <p>
+                    Famous for beautiful beaches,
+                    nightlife and water sports.
+                </p>
+
+                <a href="/place/goa">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANALI -->
+
+        <div class="place-card">
+
+            <div class="place-image manali">
+                <img
+                src="https://images.unsplash.com/photo-1605649487212-47bdab064df7"
+                  alt="Manali Mountains">
+            </div>
+
+            <div class="place-content">
+
+                <h2>Manali</h2>
+
+                <p>
+                    Enjoy mountains, snow,
+                    nature and adventure activities.
+                </p>
+
+                <a href="/place/manali">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- KERALA -->
+
+        <div class="place-card">
+
+        
+        <div class="place-image kerala">
+    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
+         alt="Kerala Backwaters">
+
+      </div>
+            </div>
+
+            <div class="place-content">
+
+                <h2>Kerala</h2>
+
+                <p>
+                    Explore backwaters, greenery
+                    and beautiful landscapes.
+                </p>
+
+                <a href="/place/kerala">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUMBAI -->
+
+        <div class="place-card">
+
+            <div class="place-image mumbai">
+    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f"
+         alt="Mumbai">
+   </div>
+                
+            </div>
+
+            <div class="place-content">
+
+                <h2>Mumbai</h2>
+
+                <p>
+                    Visit Gateway of India,
+                    Marine Drive and famous attractions.
+                </p>
+
+                <a href="/place/mumbai">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAIPUR -->
+
+        <div class="place-card">
+
+            <div class="place-image jaipur">
+                🏰
+            </div>
+
+            <div class="place-content">
+
+                <h2>Jaipur</h2>
+
+                <p>
+                    Discover forts, palaces
+                    and beautiful historical places.
+                </p>
+
+                <a href="/place/jaipur">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DELHI -->
+
+        <div class="place-card">
+
+            <div class="place-image delhi">
+                🏛️
+            </div>
+
+            <div class="place-content">
+
+                <h2>Delhi</h2>
+
+                <p>
+                    Explore historical monuments,
+                    markets and famous landmarks.
+                </p>
+
+                <a href="/place/delhi">
+                    <button>
+                        View Details
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Smart Tourism | Explore • Travel • Enjoy
+    </p>
+
+</footer>
+
+</body>
+</html>

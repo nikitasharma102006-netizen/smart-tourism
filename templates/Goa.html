@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goa - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/booking">Bookings</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+<section class="place-details">
+
+    <h1>🌴 Goa</h1>
+
+    <p>
+        Goa is famous for its beautiful beaches,
+        nightlife, water sports and scenic locations.
+    </p>
+
+    <h2>📍 Popular Attractions</h2>
+
+    <ul>
+        <li>Baga Beach</li>
+        <li>Calangute Beach</li>
+        <li>Fort Aguada</li>
+        <li>Colva Beach</li>
+    </ul>
+
+    <a href="/booking">
+        <button>🎫 Book Your Trip</button>
+    </a>
+
+    <br><br>
+
+    <a href="/places">
+        ← Back to Places
+    </a>
+
+</section>
+
+</body>
+</html>

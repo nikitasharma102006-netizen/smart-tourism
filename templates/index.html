@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🌍 Smart Tourism</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>🌍 Explore India</h1>
+
+        <p>
+            Discover beautiful destinations, explore amazing places,
+            find comfortable hotels and plan your perfect trip
+            with Smart Tourism.
+        </p>
+
+        <div class="buttons">
+
+            <a href="/places" class="btn">
+                🗺️ Explore Places
+            </a>
+
+            <a href="/login" class="btn btn-outline">
+                🔐 Login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <h2>✨ Why Choose Smart Tourism?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>🗺️ Tourist Places</h3>
+            <p>
+                Explore beautiful tourist destinations
+                across India.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🏨 Hotels</h3>
+            <p>
+                Find comfortable hotels for your
+                perfect holiday.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🎫 Easy Booking</h3>
+            <p>
+                Book your trips easily using our
+                simple booking system.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📋 My Bookings</h3>
+            <p>
+                View and manage your tourism
+                bookings in one place.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Smart Tourism | Explore • Travel • Enjoy 🌍</p>
+</footer>
+
+</body>
+</html>

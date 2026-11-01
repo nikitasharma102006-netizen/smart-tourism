@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Smart Tourism</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        🌍 Smart Tourism
+    </div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Home</a>
+        <a href="/places">Places</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/booking">Bookings</a>
+        <a href="/mybooking">My Bookings</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<!-- DASHBOARD HEADER -->
+
+<section class="dashboard">
+
+    <div class="welcome-section">
+
+        <h1>
+            Welcome, {{ session['user'] }}! 👋
+        </h1>
+
+        <p>
+            Manage your tourism journey from here.
+        </p>
+
+    </div>
+
+
+    <!-- DASHBOARD CARDS -->
+
+    <div class="dashboard-cards">
+
+
+        <!-- PLACES -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🗺️
+            </div>
+
+            <h2>Tourist Places</h2>
+
+            <p>
+                Explore beautiful tourist destinations
+                across India.
+            </p>
+
+            <a href="/places">
+                <button class="blue-btn">
+                    Explore Places
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- HOTELS -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🏨
+            </div>
+
+            <h2>Hotels</h2>
+
+            <p>
+                Find comfortable hotels for
+                your trip.
+            </p>
+
+            <a href="/hotels">
+                <button class="blue-btn">
+                    View Hotels
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- BOOKINGS -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🎫
+            </div>
+
+            <h2>My Bookings</h2>
+
+            <p>
+                View and manage your
+                trip bookings.
+            </p>
+
+            <a href="/mybooking">
+                <button class="purple-btn">
+                    View Bookings
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Smart Tourism | Explore • Travel • Enjoy
+    </p>
+
+</footer>
+
+</body>
+</html>
